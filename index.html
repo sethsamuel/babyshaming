@@ -1,9 +1,78 @@
 <html>
+	<head>
+		<link href='//fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+		<style>
+			.clearfix:after {
+				visibility: hidden;
+				display: block;
+				font-size: 0;
+				content: " ";
+				clear: both;
+				height: 0;
+			}
+			body{
+				font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+				
+			}
+			h1, h2{
+				font-weight: 300;
+			}
+			h2{
+				margin-bottom: .25rem;
+			}
+
+			#input{
+				box-shadow: none;
+				outline: none;
+				border: 1px solid #ccc;
+				font-size: 1.2em;
+				padding: .5rem;
+				display:block;
+				width:100%
+				;max-width:640px;
+			}
+			.row{
+				width: 100%;
+				max-width: 640px;
+				margin-bottom: 2rem;
+			}
+			.column{
+				width: 50%;				
+				float: left;
+			}
+			.center{
+				text-align: center;
+			}
+			#download{
+				display: inline-block;
+				background: #3d6bdf;
+				font-size: 1.2rem;
+				color:white;
+				text-decoration: none;
+				padding: .25rem .75rem;
+				margin: 2rem 0;
+				transition: all 0.2s ease;
+				-webkit-transition: all 0.2s ease;
+				-mox-transition: all 0.2s ease;
+			}
+			#download:hover{
+				background: #355ec4;
+			}
+		</style>
+	</head>
 	<body>
+		<span  style="font-family:Handlee;"> </span>
 		<h1>For Shame!?</h1>
-		<canvas id="canvas" width="640" height="640"  style="width:640px;height:640px;"></canvas>
-		<h2>What did the baby do now?</h2>
-		<input id="input" type="text" style="display:block;width:100%;"/>
+		<canvas id="canvas" width="640" height="640"  style="width:100%;max-width:640px;"></canvas>
+		<div class="row clearfix">			
+			<div class="column">
+				<h2>What did the baby do now?</h2>
+				<textarea id="input"></textarea>
+			</div>
+			<div class="column center">
+				<a href="#" id="download">Download</a>
+			</div>
+		</div>
 		<script src="main.js"></script>
 	</body>
 </html>
