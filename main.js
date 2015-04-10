@@ -12,22 +12,24 @@ input.addEventListener("input", function(e){
 	context.drawImage(img, 0, 0, 640, 640);
 	if(!/\w/.test(input.value)) return;
 	context.fillStyle = "#3d6bdf";
-	context.font = "36pt Handlee";
+	context.font = "28pt Handlee";
 	var lines = input.value.split(/\n/);
+	var x = 260;
 	var y = 340;
-	var maxWidth = 220;
+	var maxWidth = 210;
 	for(var i = 0; i < lines.length; i++){
 		var text = lines[i].trim();
 		context.save();
-		context.rotate(3* Math.PI/180);
-		context.globalAlpha = 0.7;
-		context.fillText(text, 250, y, maxWidth);
+		context.globalCompositeOperation = "multiply";
+		context.rotate(3.5* Math.PI/180);
+		context.globalAlpha = 0.5;
+		context.fillText(text, x, y, maxWidth);
 		context.globalAlpha = 0.05;
-		context.fillText(text, 248, y, maxWidth);
+		context.fillText(text, x-2, y, maxWidth);
 		context.globalAlpha = 0.05;
-		context.fillText(text, 251, y, maxWidth);
+		context.fillText(text, x+1, y, maxWidth);
 		context.restore();
-		y += 46;
+		y += 40;
 	}
 });
 
